@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Utilizador"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-29 10:09:00 "/>
+        <attribute name="created" value="VXRpbGl6YWRvcjtQQ1MtREM3ODAwOzIwMjQtMTAtMjk7IjA5OjUwOjIxICI7Mjg3Mg=="/>
+        <attribute name="edited" value="VXRpbGl6YWRvcjtQQ1MtREM3ODAwOzIwMjQtMTAtMjk7IjEwOjA5OjAwICI7MTsyOTcz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero, i, adivinha, tentativas" type="Integer" array="False" size=""/>
+            <assign variable="tentativas" expression="0"/>
+            <assign variable="numero" expression="0"/>
+            <output expression="&quot;Adivinhe o n&#250;mero pensado de 0 a 100 &quot;" newline="True"/>
+            <assign variable="adivinha" expression="random(100)"/>
+            <while expression="tentativas&lt;5 and numero &lt;&gt; adivinha">
+                <input variable="numero"/>
+                <if expression="numero &lt; adivinha">
+                    <then>
+                        <assign variable="tentativas" expression="tentativas+1"/>
+                        <output expression="&quot;Introduza um numero mais elevado &quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <assign variable="tentativas" expression="tentativas+1"/>
+                        <output expression="&quot;Introduza um numero mais baixo &quot;" newline="True"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="numero=adivinha">
+                <then>
+                    <output expression="&quot;Parabens acertaste sendo o &quot; &amp; adivinha&amp; &quot;  o numero certo com &quot; &amp; tentativas &amp; &quot; tentativa(s) &quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Sorte para a proxima o numero certo &#233; &quot; &amp; adivinha" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
